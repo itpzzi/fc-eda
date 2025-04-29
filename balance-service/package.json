@@ -1,0 +1,30 @@
+{
+    "name": "event-driven-architecture",
+    "version": "1.0.0",
+    "description": "Project developed as part of the challenge Event Driven Architecture by Full Cycle.",
+    "main": "dist/index.js",
+    "scripts": {
+        "dev": "nodemon --exec ts-node -r tsconfig-paths/register src/main.ts",
+        "build": "tsc",
+        "start": "ts-node -r tsconfig-paths/register src/main.ts",
+        "test": "jest",
+        "test:watch": "jest --watch"
+    },
+    "dependencies": {
+        "dotenv": "^16.5.0",
+        "express": "^5.1.0",
+        "kafkajs": "^2.2.4",
+        "mongoose": "^8.14.0",
+        "tsconfig-paths": "^3.9.0",
+        "typescript": "^4.5.4"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.1",
+        "@types/jest": "^27.4.0",
+        "jest": "^27.4.5",
+        "nodemon": "^3.1.10",
+        "ts-jest": "^27.1.3",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.5.4"
+    }
+}

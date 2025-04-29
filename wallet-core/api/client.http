@@ -1,0 +1,46 @@
+### Criar cliente
+POST http://localhost:8080/clients
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@j.com"
+}
+
+### Criar cliente
+POST http://localhost:8080/clients
+Content-Type: application/json
+
+{
+  "name": "Italo Doe",
+  "email": "italo@i.com"
+}
+
+### Criar conta
+# Substitua o client_id abaixo com o ID retornado da requisição acima
+POST http://localhost:8080/accounts
+Content-Type: application/json
+
+{
+  "client_id": "SUBSTITUA_PELO_CLIENT_ID"
+}
+
+### Criar segunda conta (destinatário)
+# Substitua o client_id abaixo com o mesmo ou outro ID
+POST http://localhost:8080/accounts
+Content-Type: application/json
+
+{
+  "client_id": "SUBSTITUA_PELO_CLIENT_ID"
+}
+
+### Criar transação entre contas
+# Substitua os account_id_from e account_id_to pelos valores retornados acima
+POST http://localhost:8080/transactions
+Content-Type: application/json
+
+{
+  "account_id_from": "SUBSTITUA_PELA_CONTA_ORIGEM",
+  "account_id_to": "SUBSTITUA_PELA_CONTA_DESTINO",
+  "amount": 10
+}

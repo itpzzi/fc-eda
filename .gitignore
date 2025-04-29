@@ -1,0 +1,33 @@
+.docker
+
+# Node
+node_modules/
+dist/
+*.log
+npm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# IDEs
+.vscode/
+.idea/
+
+# Env
+.env
+.env.*.local
+
+# Jest
+coverage/
+jest-cache/
+jest.config.js
+
+# Docker
+docker-compose.override.yml
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Others
+*.sqlite
