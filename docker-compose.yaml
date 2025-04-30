@@ -68,9 +68,11 @@ services:
     volumes:
       - ./balance-service:/app
     working_dir: /app
-    command: npm run dev
+    # command: npm run dev
+    command: node --inspect=0.0.0.0:9229 -r ts-node/register -r tsconfig-paths/register src/main.ts
     ports:
       - "3003:3003"
+      - "9229:9229" # Debugging port
 
   wallet-core:
     build:
