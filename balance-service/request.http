@@ -1,1 +1,54 @@
-GET http://localhost:3003/balances/{id}
+### [1] Criar cliente - John Doe
+POST http://localhost:8080/clients
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@j.com"
+}
+
+### [2] Criar cliente - Italo Doe
+POST http://localhost:8080/clients
+Content-Type: application/json
+
+{
+  "name": "Italo Doe",
+  "email": "italo@i.com"
+}
+
+### [3] Criar conta para John Doe
+# Substitua CLIENT_ID_JOHN pelo ID retornado da requisição [1]
+POST http://localhost:8080/accounts
+Content-Type: application/json
+
+{
+  "client_id": "CLIENT_ID_JOHN"
+}
+
+### [4] Criar conta para Italo Doe
+# Substitua CLIENT_ID_ITALO pelo ID retornado da requisição [2]
+POST http://localhost:8080/accounts
+Content-Type: application/json
+
+{
+  "client_id": "CLIENT_ID_ITALO"
+}
+
+### [5] Criar transação entre contas
+# Substitua pelos IDs reais das contas criadas nas requisições [3] e [4]
+# Não implementado no momento: rotas de inserção de saldo inicial
+# Para simular saldo inicial, você pode usar o banco de dados diretamente
+# UPDATE accounts SET balance = 1000 WHERE id = 'ACCOUNT_ID_ORIGEM';
+# SELECT id, balance FROM accounts;
+POST http://localhost:8080/transactions
+Content-Type: application/json
+
+{
+  "account_id_from": "ACCOUNT_ID_ORIGEM",
+  "account_id_to": "ACCOUNT_ID_DESTINO",
+  "amount": 250
+}
+
+### [6] Consultar saldo da conta
+# Substitua ACCOUNT_ID pelo ID da conta que deseja consultar
+GET http://localhost:3003/balances/ACCOUNT_ID
